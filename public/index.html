@@ -9,60 +9,26 @@
     <title>Ultraviolet | Sophisticated Web Proxy</title>
     <meta
       name="description"
-      content="Ultraviolet is a highly sophisticated proxy used for evading internet censorship or accessing websites in a controlled sandbox using the power of service-workers. Unblock sites today!"
-    />
-    <meta
-      name="keywords"
-      content="proxy, web proxy, ultraviolet, service workers, unblock websites, unblock chromebook, free web proxy, proxy list, proxy sites, un block chromebook, online proxy, proxy server, proxy software, service worker proxy, proxy on chromebook, surf the web freely, route requests"
+      content="Ultraviolet is a highly sophisticated proxy used for evading internet censorship."
     />
     <meta
       name="theme-color"
       media="(prefers-color-scheme: dark)"
       content="#434c5e"
     />
-    <meta name="googlebot" content="index, follow, snippet" />
     <link rel="shortcut icon" content="favicon.ico" />
     <link rel="stylesheet" href="index.css" />
-    <!-- BareMux, Epoxy и Ultraviolet из CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/@mercuryworkshop/bare-mux/dist/index.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/@mercuryworkshop/epoxy-transport/dist/index.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/@titaniumnetwork-dev/ultraviolet/dist/uv.bundle.js" defer></script>
-    <script src="/uv/uv.config.js" defer></script>
+
+    <!-- 1. Загружаем внешние библиотеки строго ПОСЛЕДОВАТЕЛЬНО без defer -->
+    <script src="https://cdn.jsdelivr.net/npm/@mercuryworkshop/bare-mux/dist/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mercuryworkshop/epoxy-transport/dist/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@titaniumnetwork-dev/ultraviolet/dist/uv.bundle.js"></script>
+
+    <!-- 2. Загружаем локальный конфиг и воркеры -->
+    <script src="/uv/uv.config.js"></script>
     <script src="register-sw.js" defer></script>
     <script src="search.js" defer></script>
     <script src="index.js" defer></script>
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "What is Ultraviolet (Web Proxy)?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Highly sophisticated proxy used for evading internet censorship or accessing websites in a controlled sandbox using the power of service-workers and more!"
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How do I unblock sites using Ultraviolet?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Simply head to an official site featuring Ultraviolet such as Holy Unblocker or Incognito! You can also self-host Ultraviolet on your own web server for maximum privacy."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What if Ultraviolet is blocked or not working?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Join the Titanium Network Discord at discord.gg/unblock!"
-            }
-          }
-        ]
-      }
-    </script>
   </head>
 
   <body>
@@ -94,25 +60,11 @@
     </div>
     <footer>
       <div>
-        <a
-          title="The TitaniumNetwork GitHub organization"
-          href="https://github.com/titaniumnetwork-dev"
-          >TitaniumNetwork</a
-        >
-        <a title="The TitaniumNetwork Discord" href="https://discord.gg/unblock"
-          >Discord</a
-        >
-        <a
-          title="The TompHTTP GitHub organization"
-          href="https://github.com/tomphttp"
-          >TompHTTP</a
-        >
-        <a
-          title="The official deployment repository for Ultraviolet"
-          href="https://github.com/titaniumnetwork-dev/Ultraviolet-App"
-          >GitHub</a
-        >
-        <a title="License information" href="credits.html">Credits</a>
+        <a href="https://github.com/titaniumnetwork-dev">TitaniumNetwork</a>
+        <a href="https://discord.gg/unblock">Discord</a>
+        <a href="https://github.com/tomphttp">TompHTTP</a>
+        <a href="https://github.com/titaniumnetwork-dev/Ultraviolet-App">GitHub</a>
+        <a href="credits.html">Credits</a>
       </div>
       <div>
         <span>Ultraviolet &copy; TN 2023</span>
