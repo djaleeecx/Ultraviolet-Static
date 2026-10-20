@@ -2,29 +2,12 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
-    />
-    <title>Ultraviolet | Sophisticated Web Proxy</title>
-    <meta
-      name="description"
-      content="Ultraviolet is a highly sophisticated proxy used for evading internet censorship."
-    />
-    <meta
-      name="theme-color"
-      media="(prefers-color-scheme: dark)"
-      content="#434c5e"
-    />
-    <link rel="shortcut icon" content="favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ultraviolet | Web Proxy</title>
     <link rel="stylesheet" href="index.css" />
 
-    <!-- 1. Загружаем внешние библиотеки строго ПОСЛЕДОВАТЕЛЬНО без defer -->
-    <script src="https://cdn.jsdelivr.net/npm/@mercuryworkshop/bare-mux/dist/index.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@mercuryworkshop/epoxy-transport/dist/index.js"></script>
+    <!-- Загружаем ТОЛЬКО сам движок Ultraviolet без BareMux -->
     <script src="https://cdn.jsdelivr.net/npm/@titaniumnetwork-dev/ultraviolet/dist/uv.bundle.js"></script>
-
-    <!-- 2. Загружаем локальный конфиг и воркеры -->
     <script src="/uv/uv.config.js"></script>
     <script src="register-sw.js" defer></script>
     <script src="search.js" defer></script>
@@ -32,44 +15,21 @@
   </head>
 
   <body>
-    <div
-      title="Ultraviolet Logo"
-      class="flex-center logo-wrapper header-center"
-    >
+    <div class="flex-center logo-wrapper header-center">
       <img class="logo" src="uv.png" alt="Ultraviolet" />
       <h1>Ultraviolet | TN</h1>
     </div>
-    <div class="flex-center desc left-margin">
-      <p>
-        Ultraviolet is highly sophisticated proxy used for evading internet
-        censorship.
-      </p>
-    </div>
 
     <form id="uv-form" class="flex-center">
-      <input
-        id="uv-search-engine"
-        value="https://www.google.com/search?q=%s"
-        type="hidden"
-      />
+      <input id="uv-search-engine" value="https://www.google.com/search?q=%s" type="hidden" />
       <input id="uv-address" type="text" placeholder="Search the web freely" />
     </form>
+    
     <div class="desc left-margin">
       <p id="uv-error"></p>
       <pre id="uv-error-code"></pre>
     </div>
-    <footer>
-      <div>
-        <a href="https://github.com/titaniumnetwork-dev">TitaniumNetwork</a>
-        <a href="https://discord.gg/unblock">Discord</a>
-        <a href="https://github.com/tomphttp">TompHTTP</a>
-        <a href="https://github.com/titaniumnetwork-dev/Ultraviolet-App">GitHub</a>
-        <a href="credits.html">Credits</a>
-      </div>
-      <div>
-        <span>Ultraviolet &copy; TN 2023</span>
-      </div>
-    </footer>
+
     <iframe style="display: none;" id="uv-frame"></iframe>
   </body>
 </html>
